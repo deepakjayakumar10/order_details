@@ -1,5 +1,5 @@
 #requirements.txt
-snowflake-snowpark-python
+python
 snowflake.core
 streamlit
 requests
