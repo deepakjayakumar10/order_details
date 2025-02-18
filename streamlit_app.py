@@ -90,8 +90,8 @@ def display_content(
                 with st.spinner("Running SQL..."):
                     df = pd.read_sql(item["statement"], st.session_state.CONN)
                     if len(df.index) > 1:
-                        data_tab, line_tab, bar_tab = st.tabs(
-                            ["Data", "Line Chart", "Bar Chart"]
+                        data_tab, line_tab, bar_tab, area_tab = st.tabs(
+                            ["Data", "Line Chart", "Bar Chart", "Area Chart"]
                         )
                         data_tab.dataframe(df)
                         if len(df.columns) > 1:
@@ -100,6 +100,8 @@ def display_content(
                             st.line_chart(df)
                         with bar_tab:
                             st.bar_chart(df)
+                        with area_tab:
+                            st.area_chart(df)
                     else:
                         st.dataframe(df)
 
