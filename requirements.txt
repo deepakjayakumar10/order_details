@@ -1,12 +1,10 @@
 #requirements.txt
-python
-snowflake.core
-streamlit
-requests
-pandas
-snowflake.connector
 Any
 Dict
 List
 Optional
+pandas
+requests
+snowflake.connector
+streamlit
 
