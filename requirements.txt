@@ -1,4 +1,5 @@
 #requirements.txt
+typing
 Any
 Dict
 List
@@ -7,5 +8,5 @@ pandas
 requests
 snowflake.connector
 streamlit
-typing
+
 
