@@ -6,4 +6,8 @@ requests
 typing
 pandas
 snowflake.connector
+Any
+Dict
+List
+Optional
 
