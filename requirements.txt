@@ -1,0 +1,5 @@
+#requirements.txt
+snowflake-snowpark-python
+snowflake.core
+streamlit
+requests
