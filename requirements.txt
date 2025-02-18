@@ -3,7 +3,6 @@ snowflake-snowpark-python
 snowflake.core
 streamlit
 requests
-typing
 pandas
 snowflake.connector
 Any
