@@ -72,9 +72,9 @@ def display_content(
 ) -> None:
     """Displays a content item for a message."""
     message_index = message_index or len(st.session_state.messages)
-    if request_id:
-        # with st.expander("Request ID", expanded=False):
-          #   st.markdown(request_id)
+   -- if request_id:
+        -- with st.expander("Request ID", expanded=False):
+          --   st.markdown(request_id)
     for item in content:
         if item["type"] == "text":
             st.markdown(item["text"])
