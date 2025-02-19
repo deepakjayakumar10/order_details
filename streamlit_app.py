@@ -95,6 +95,8 @@ def display_content(
                         )
                         data_tab.dataframe(df)
                         if len(df.columns) > 1:
+                            df = df.set_index(df.columns[0])
+                        with line_tab:
                             st.line_chart(df)
                         with bar_tab:
                             st.bar_chart(df)
@@ -104,7 +106,7 @@ def display_content(
                         st.dataframe(df)
 
 
-st.title("Order Details AI")
+st.title("Cortex Analyst")
 st.markdown(f"Semantic Model: `{FILE}`")
 
 if "messages" not in st.session_state:
