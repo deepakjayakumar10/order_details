@@ -95,7 +95,6 @@ def display_content(
                         )
                         data_tab.dataframe(df)
                         if len(df.columns) > 1:
-@@ -100,29 +100,31 @@
                             st.line_chart(df)
                         with bar_tab:
                             st.bar_chart(df)
