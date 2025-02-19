@@ -72,6 +72,9 @@ def display_content(
 ) -> None:
     """Displays a content item for a message."""
     message_index = message_index or len(st.session_state.messages)
+    if request_id:
+        with st.expander("Request ID", expanded=False):
+            st.markdown(request_id)
     for item in content:
         if item["type"] == "text":
             st.markdown(item["text"])
@@ -92,8 +95,7 @@ def display_content(
                         )
                         data_tab.dataframe(df)
                         if len(df.columns) > 1:
-                            df = df.set_index(df.columns[0])
-                        with line_tab:
+@@ -100,29 +100,31 @@
                             st.line_chart(df)
                         with bar_tab:
                             st.bar_chart(df)
@@ -103,8 +105,8 @@ def display_content(
                         st.dataframe(df)
 
 
-st.title(":cup_with_straw: Order Details AI Chatbot :cup_with_straw:")
-
+st.title("Order Details AI")
+st.markdown(f"Semantic Model: `{FILE}`")
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
