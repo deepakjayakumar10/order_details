@@ -107,7 +107,7 @@ def display_content(
 
 
 st.title("Order details AI")
-st.markdown(f"Semantic Model: `{FILE}`")
+# st.markdown(f"Semantic Model: `{FILE}`")
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
