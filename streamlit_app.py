@@ -73,8 +73,8 @@ def display_content(
     """Displays a content item for a message."""
     message_index = message_index or len(st.session_state.messages)
     if request_id:
-        with st.expander("Request ID", expanded=False):
-            st.markdown(request_id)
+        # with st.expander("Request ID", expanded=False):
+          #   st.markdown(request_id)
     for item in content:
         if item["type"] == "text":
             st.markdown(item["text"])
@@ -106,8 +106,8 @@ def display_content(
                         st.dataframe(df)
 
 
-st.title("Cortex Analyst")
-st.markdown(f"Semantic Model: `{FILE}`")
+st.title(":cup_with_straw: Order Details AI Chatbot :cup_with_straw:")
+# st.markdown(f"Semantic Model: `{FILE}`")
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
