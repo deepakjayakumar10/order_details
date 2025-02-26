@@ -106,7 +106,7 @@ def display_content(
                         st.dataframe(df)
 
 
-st.title(":cup_with_straw: ORDE AI 🔍")
+st.title(":cup_with_straw: ORDE AI HI🔍")
 # st.markdown(f"Semantic Model: `{FILE}`")
 
 if "messages" not in st.session_state:
