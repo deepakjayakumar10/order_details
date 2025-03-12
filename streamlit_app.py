@@ -15,7 +15,7 @@ FILE = "beverage_order_model.yaml"
 if 'CONN' not in st.session_state or st.session_state.CONN is None:
     st.session_state.CONN = snowflake.connector.connect(
         user="DKUMARJAYAKUMAR",
-        password="Vivega@11223344",
+        password="Dkumarjayakumar@11223344",
         account="KUB07435",
         host=HOST,
         port=443,
