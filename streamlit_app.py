@@ -6,7 +6,7 @@ import snowflake.connector
 import streamlit as st
 
 
-HOST = "OHHRLIA-SJB65919.snowflakecomputing.com"
+HOST = "CMBJTAT-KUB07435.snowflakecomputing.com"
 DATABASE = "CORTEX_SEARCH_TUTORIAL_DB"
 SCHEMA = "PUBLIC"
 STAGE = "BEVERAGE_DATA_STAGE"
@@ -14,9 +14,9 @@ FILE = "beverage_order_model.yaml"
 
 if 'CONN' not in st.session_state or st.session_state.CONN is None:
     st.session_state.CONN = snowflake.connector.connect(
-        user="DEEPAKJAYAKUMAR10",
+        user="DKUMARJAYAKUMAR",
         password="Vivega@11223344",
-        account="SJB65919",
+        account="KUB07435",
         host=HOST,
         port=443,
         warehouse="SEARCH_WH",
