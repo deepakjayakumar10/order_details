@@ -157,7 +157,7 @@ def record_text():
     return
     
 if user_input := st.chat_input("What is your question?"):
-    user_input = record_text()
+    # user_input = record_text()
     process_message(prompt=user_input)
 
 if st.session_state.active_suggestion:
