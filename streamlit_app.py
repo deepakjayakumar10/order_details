@@ -144,13 +144,13 @@ def record_text():
             #use the microphone for input
             with st.audio(audio_value) as source2:
                 # prepare recognizer to receive input
-                r.adjust_for_ambient_noise(source2,duration=0.2)
+                #r.adjust_for_ambient_noise(source2,duration=0.2)
 
                 #listen for the user input
-                audio2 = r.listen(source2)
+                #audio2 = r.listen(source2)
 
                 #use google to recognize audio
-                Mytext = r.recognize_google(audio2)
+                Mytext = r.recognize_google(source2)
 
                 return Mytext
 
