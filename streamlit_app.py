@@ -126,7 +126,37 @@ for message_index, message in enumerate(st.session_state.messages):
             message_index=message_index,
         )
 
+
+#initialize the recognizer
+r = sr.Recognizer()
+
+def record_text():
+    # Loop in case of error
+    while(1):
+        try:
+            #use the microphone for input
+            with sr.Microphone() as source2:
+                # prepare recognizer to receive input
+                r.adjust_for_ambient_noise(source2,duration=0.2)
+
+                #listen for the user input
+                audio2 = r.listen(source2)
+
+                #use google to recognize audio
+                Mytext = r.recognize_google(audio2)
+
+                return Mytext
+
+        except sr.RequestError as e:
+            print("could not request result: {0}".format(e))
+
+        except sr.UnknownValueError:
+            print("unknown value")
+
+    return
+    
 if user_input := st.chat_input("What is your question?"):
+    user_input = record_text()
     process_message(prompt=user_input)
 
 if st.session_state.active_suggestion:
