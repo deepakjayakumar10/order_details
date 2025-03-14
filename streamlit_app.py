@@ -79,6 +79,7 @@ def display_content(
     message_index: Optional[int] = None,
 ) -> None:
     """Displays a content item for a message."""
+    stt_button = Button(label="Speak", width=100)
     message_index = message_index or len(st.session_state.messages)
     # if request_id:
     #     with st.expander("Request ID", expanded=False):
