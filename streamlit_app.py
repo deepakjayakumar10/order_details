@@ -142,7 +142,7 @@ def record_text():
         try:
             
             #use the microphone for input
-            with sr.Microphone() as source2:
+            with st.audio(audio_value) as source2:
                 # prepare recognizer to receive input
                 r.adjust_for_ambient_noise(source2,duration=0.2)
 
@@ -168,7 +168,7 @@ def record_text():
        
         
 if user_input := st.chat_input("What is your question?"):
-    user_input =  st.write(result.get("GET_TEXT"))
+    user_input =  record_text()
     process_message(prompt=user_input)
 
 if st.session_state.active_suggestion:
