@@ -140,7 +140,7 @@ def record_text():
     # Loop in case of error
     while(1):
         try:
-            audiodata = r.record(st.audio(audio_value,format="audio/wav"))
+            audiodata = r.record(audio_value)
 
             Mytext = r.recognize_google(audiodata)
             
