@@ -117,6 +117,7 @@ def display_content(
 
 st.title(":cup_with_straw: ORDE AI 🔍")
 audio_value = st.audio_input("Record a voice message")
+
 # st.markdown(f"Semantic Model: `{FILE}`")
 
 if "messages" not in st.session_state:
@@ -140,6 +141,7 @@ def record_text():
     # Loop in case of error
     while(1):
         try:
+            st.audio(audio_value)
             audiodata = r.record(audio_value)
 
             Mytext = r.recognize_google(audiodata)
@@ -160,7 +162,7 @@ def record_text():
        
         
 if user_input := st.chat_input("What is your question?"):
-    user_input =  record_text()
+    record_text()
     process_message(prompt=user_input)
 
 if st.session_state.active_suggestion:
