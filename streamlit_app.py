@@ -140,21 +140,9 @@ def record_text():
     # Loop in case of error
     while(1):
         try:
+            Mytext = r.recognize_google(st.audio(audio_value))
             
-            #use the microphone for input
-            with st.audio(audio_value) as source2:
-                # prepare recognizer to receive input
-                #r.adjust_for_ambient_noise(source2,duration=0.2)
-
-                #listen for the user input
-                #audio2 = r.listen(source2)
-
-                #use google to recognize audio
-                Mytext = st.audio(audio_value)
-                st.write(Mytext)
-                #Mytext = r.recognize_google(audio_value)
-
-                return Mytext
+            return Mytext
 
         except sr.RequestError as e:
             print("could not request result: {0}".format(e))
