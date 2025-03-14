@@ -3,3 +3,6 @@ snowflake-snowpark-python
 snowflake.core
 streamlit
 requests
+speechrecognition
+pyaudio
+pyttsx3
