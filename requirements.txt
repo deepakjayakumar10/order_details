@@ -2,6 +2,7 @@
 snowflake-snowpark-python
 snowflake.core
 streamlit
+streamlit-nightly
 requests
 speechrecognition
 pyaudio
