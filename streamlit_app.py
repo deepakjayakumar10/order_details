@@ -1,9 +1,13 @@
 from typing import Any, Dict, List, Optional
+from speech_recognition.recognizers import google
 
 import pandas as pd
 import requests
 import snowflake.connector
 import streamlit as st
+import speech_recognition as sr
+import pyttsx3
+
 
 
 HOST = "CMBJTAT-KUB07435.snowflakecomputing.com"
