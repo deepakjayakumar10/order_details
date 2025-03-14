@@ -116,7 +116,7 @@ def display_content(
 
 
 st.title(":cup_with_straw: ORDE AI 🔍")
-stt_button = Button(label="Speak", width=100)
+audio_value = st.audio_input("Record a voice message")
 # st.markdown(f"Semantic Model: `{FILE}`")
 
 if "messages" not in st.session_state:
@@ -140,8 +140,9 @@ def record_text():
     # Loop in case of error
     while(1):
         try:
+            
             #use the microphone for input
-            with st.audio_input("Record speech") as source2:
+            with sr.Microphone() as source2:
                 # prepare recognizer to receive input
                 r.adjust_for_ambient_noise(source2,duration=0.2)
 
@@ -163,32 +164,7 @@ def record_text():
     
 
 
-stt_button.js_on_event("button_click", CustomJS(code="""
-    var recognition = new webkitSpeechRecognition();
-    recognition.continuous = true;
-    recognition.interimResults = true;
- 
-    recognition.onresult = function (e) {
-        var value = "";
-        for (var i = e.resultIndex; i < e.results.length; ++i) {
-            if (e.results[i].isFinal) {
-                value += e.results[i][0].transcript;
-            }
-        }
-        if ( value != "") {
-            document.dispatchEvent(new CustomEvent("GET_TEXT", {detail: value}));
-        }
-    }
-    recognition.start();
-    """))
 
-result = streamlit_bokeh_events(
-    stt_button,
-    events="GET_TEXT",
-    key="listen",
-    refresh_on_update=False,
-    override_height=75,
-    debounce_time=0)
        
         
 if user_input := st.chat_input("What is your question?"):
