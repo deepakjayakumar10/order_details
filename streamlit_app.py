@@ -116,7 +116,7 @@ def display_content(
 
 
 st.title(":cup_with_straw: ORDE AI 🔍")
-audio_value = st.experimental_audio_input("Record a voice message")
+audio_value = st.audio_input("Record a voice message")
 
 # st.markdown(f"Semantic Model: `{FILE}`")
 
