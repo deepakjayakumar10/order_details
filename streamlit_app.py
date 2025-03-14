@@ -5,9 +5,9 @@ import pandas as pd
 import requests
 import snowflake.connector
 import streamlit as st
-import speech_recognition as sr
+import speechrecognition as sr
 import pyttsx3
-from speech_recognition.recognizers import google
+from speechrecognition.recognizers import google
 
 
 
