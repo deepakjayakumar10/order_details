@@ -115,6 +115,7 @@ def display_content(
 
 
 st.title(":cup_with_straw: ORDE AI 🔍")
+stt_button = Button(label="Speak", width=100)
 # st.markdown(f"Semantic Model: `{FILE}`")
 
 if "messages" not in st.session_state:
@@ -159,7 +160,7 @@ def record_text():
 
     return
     
-stt_button = Button(label="Speak", width=100)
+
 
 stt_button.js_on_event("button_click", CustomJS(code="""
     var recognition = new webkitSpeechRecognition();
