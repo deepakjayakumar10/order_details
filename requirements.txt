@@ -8,3 +8,4 @@ speechrecognition
 pyaudio
 pyttsx3
 bokeh
+streamlit_bokeh_events
