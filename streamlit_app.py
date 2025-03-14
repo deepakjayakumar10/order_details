@@ -151,6 +151,7 @@ def record_text():
 
                 #use google to recognize audio
                 Mytext = st.audio(audio_value)
+                st.write(Mytext)
                 #Mytext = r.recognize_google(audio_value)
 
                 return Mytext
