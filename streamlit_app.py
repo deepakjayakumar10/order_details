@@ -136,7 +136,7 @@ def record_text():
     while(1):
         try:
             #use the microphone for input
-            with sr.Microphone() as source2:
+            with st.audio_input("Record speech") as source2:
                 # prepare recognizer to receive input
                 r.adjust_for_ambient_noise(source2,duration=0.2)
 
