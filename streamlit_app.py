@@ -150,7 +150,7 @@ def record_text():
                 #audio2 = r.listen(source2)
 
                 #use google to recognize audio
-                Mytext = r.recognize_google(source2)
+                Mytext = r.recognize_google(audio_value)
 
                 return Mytext
 
