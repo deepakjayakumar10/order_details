@@ -10,4 +10,4 @@ pyttsx3
 bokeh
 streamlit_bokeh_events
 audio-recorder-streamlit
-google.cloud
+google-cloud-speech
