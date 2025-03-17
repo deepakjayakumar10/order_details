@@ -12,7 +12,7 @@ from bokeh.models.widgets import Button
 from bokeh.models import CustomJS
 from streamlit_bokeh_events import streamlit_bokeh_events
 from audio_recorder_streamlit import audio_recorder
-from google.cloud import speech
+from google-cloud-speech import speechClient
 
 
 
@@ -119,11 +119,11 @@ def display_content(
 
 st.title(":cup_with_straw: ORDE AI 🔍")
 # audio_value = st.audio_input("Record a voice message")
-client3 = speech.SpeechClient()
+
 audio_bytes = audio_recorder(recording_color="#6aa36f", neutral_color="#e82c58")
 if audio_bytes:
-    audio = speech.RecognitionAudio(content=audio_bytes)
-    config = speech.RecognitionConfig(
+    audio = speechClient.RecognitionAudio(content=audio_bytes)
+    config = speechClient.RecognitionConfig(
                     encoding=speech.RecognitionConfig.AudioEncoding.LINEAR16,
                     #sample_rate_hertz=44100,
                     language_code="en-US",
@@ -132,7 +132,7 @@ if audio_bytes:
                     enable_word_confidence=True,
                     enable_word_time_offsets=True,
     )
-    operation = client3.long_running_recognize(config=config, audio=audio)
+    operation = speechClient.long_running_recognize(config=config, audio=audio)
     conversion = operation.result(timeout=90)
     for result in conversion.results:
         pass
