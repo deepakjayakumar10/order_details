@@ -121,7 +121,7 @@ st.title(":cup_with_straw: ORDE AI 🔍")
 #initialize the recognizer
 r = sr.Recognizer()
 # audio_value = st.audio_input("Record a voice message")
-client = speech.SpeechAsyncClient()
+#client = speech.SpeechAsyncClient()
 audio_bytes = audio_recorder(recording_color="#6aa36f", neutral_color="#e82c58")
 if audio_bytes:
     audio = speech.RecognitionAudio(content=audio_bytes)
@@ -135,7 +135,7 @@ if audio_bytes:
                     enable_word_time_offsets=True,
     )
     
-    #operation = client3.long_running_recognize(config=config, audio=audio)
+    operation = speech.long_running_recognize(config=config, audio=audio)
     #conversion = operation.result(timeout=90)
     #for result in conversion.results:
     #    pass
