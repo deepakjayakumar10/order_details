@@ -12,7 +12,7 @@ from bokeh.models.widgets import Button
 from bokeh.models import CustomJS
 from streamlit_bokeh_events import streamlit_bokeh_events
 from audio_recorder_streamlit import audio_recorder
-from google.cloud import speech_v2 as speech
+from google.cloud import speech_v2.services.speech as speech
 
 
 
