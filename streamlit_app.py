@@ -121,7 +121,7 @@ st.title(":cup_with_straw: ORDE AI 🔍")
 #initialize the recognizer
 r = sr.Recognizer()
 # audio_value = st.audio_input("Record a voice message")
-client = speech.SpeechClient()
+client = speech.SpeechClient(credentials = None)
 audio_bytes = audio_recorder(recording_color="#6aa36f", neutral_color="#e82c58")
 if audio_bytes:
     audio = speech.RecognitionAudio(content=audio_bytes)
