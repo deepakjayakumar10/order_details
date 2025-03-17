@@ -118,6 +118,8 @@ def display_content(
 
 
 st.title(":cup_with_straw: ORDE AI 🔍")
+#initialize the recognizer
+r = sr.Recognizer()
 # audio_value = st.audio_input("Record a voice message")
 #client3 = speech.SpeechClient()
 audio_bytes = audio_recorder(recording_color="#6aa36f", neutral_color="#e82c58")
@@ -157,8 +159,7 @@ for message_index, message in enumerate(st.session_state.messages):
         )
 
 
-#initialize the recognizer
-r = sr.Recognizer()
+
 
 def record_text():
     # Loop in case of error
