@@ -11,6 +11,7 @@ from speech_recognition.recognizers import google
 from bokeh.models.widgets import Button
 from bokeh.models import CustomJS
 from streamlit_bokeh_events import streamlit_bokeh_events
+from audio_recorder_streamlit import audio_recorder
 
 
 
@@ -116,7 +117,8 @@ def display_content(
 
 
 st.title(":cup_with_straw: ORDE AI 🔍")
-audio_value = st.audio_input("Record a voice message")
+# audio_value = st.audio_input("Record a voice message")
+audio_bytes = audio_recorder(recording_color="#6aa36f", neutral_color="#e82c58")
 
 # st.markdown(f"Semantic Model: `{FILE}`")
 
