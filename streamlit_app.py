@@ -17,7 +17,7 @@ from google.cloud import speech_v1 as speech
 
 
 
-HOST = "CMBJTAT-KUB07435.snowflakecomputing.com"
+HOST = "ZVFIDAY-LLB69903.snowflakecomputing.com"
 DATABASE = "CORTEX_SEARCH_TUTORIAL_DB"
 SCHEMA = "PUBLIC"
 STAGE = "BEVERAGE_DATA_STAGE"
@@ -26,8 +26,8 @@ FILE = "beverage_order_model.yaml"
 if 'CONN' not in st.session_state or st.session_state.CONN is None:
     st.session_state.CONN = snowflake.connector.connect(
         user="DKUMARJAYAKUMAR",
-        password="Dkumarjayakumar@11223344",
-        account="KUB07435",
+        password="Vivega@11223344",
+        account="LLB69903",
         host=HOST,
         port=443,
         warehouse="SEARCH_WH",
